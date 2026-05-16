@@ -1,33 +1,48 @@
-/*
- *  Asteroids.h
- *  Untitled2
- *
- *  Created by Misha K on 9/29/09.
- *  Copyright 2009 __MyCompanyName__. All rights reserved.
- *
- */
+#ifndef ASTEROIDS_H
+#define ASTEROIDS_H
 
-#include <string>
-#include <vector>
+#include <stdbool.h>
 
-class Asteroids
-{
-    std::vector<int> _recentlyAddedObjects;
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-	Asteroids();
-	void LoadEpheFiles(std::string path);
-public:
+typedef struct {
+    double pos_x; /* km */
+    double pos_y;
+    double pos_z;
+    double vel_x; /* km/s */
+    double vel_y;
+    double vel_z;
+    bool valid;
+} AsteroidResult;
 
-	std::vector<double> Calculate(double jd, int jplID, int& obsID, std::string& errorDescription) const;
-    std::vector<int> recentlyAddedObjects() const
-    {
-        return _recentlyAddedObjects;
-    }
+bool asteroids_load_ephe_files(const char* path);
 
-	static Asteroids& GetInstance();
+AsteroidResult asteroids_calculate(
+    double jd,
+    int jpl_id,
+    int obs_id,
+    char* error_buffer,
+    int error_buffer_size
+);
 
-	static bool objectIsPresent(int naifId);
-	static bool jdisPresent(int naifId, double jd);
-	static std::string asteroidName(int naifId);
-	static std::vector<int> loadedSpkIds();
-};
+bool asteroids_object_is_present(int naif_id);
+
+bool asteroids_jd_is_present(int naif_id, double jd);
+
+const char* asteroids_asteroid_name(int naif_id);
+
+int asteroids_last_observer_id(void);
+
+int asteroids_loaded_spk_id_count(void);
+int asteroids_copy_loaded_spk_ids(int* ids, int max_count);
+
+int asteroids_recently_added_count(void);
+int asteroids_copy_recently_added_ids(int* ids, int max_count);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* ASTEROIDS_H */

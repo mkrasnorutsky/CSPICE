@@ -14,4 +14,4 @@ FOUNDATION_EXPORT double CSPICEVersionNumber;
 //! Project version string for CSPICE.
 FOUNDATION_EXPORT const unsigned char CSPICEVersionString[];
 
-// Public C++ API: Asteroids.h (import or include from C++ / ObjC++ translation units).
+// Public C API: Asteroids.h (usable from C, C++, and ObjC++ translation units).

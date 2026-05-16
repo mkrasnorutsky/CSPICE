@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 #
-# Build CSPICE.xcframework for distribution.
+# Build CSPICE.xcframework for distribution (dynamic framework slices).
 #
 # XCFramework slices (3 frameworks — universal macOS + iOS sim, thin iOS device):
 #   - macOS:           arm64 + x86_64 (single universal framework)
 #   - iOS device:      arm64
 #   - iOS simulator:   arm64 + x86_64 (single universal framework)
+#
+# Each slice is a dynamic CSPICE.framework (mh_dylib). Apps must embed the
+# framework (iOS) or copy it into Contents/Frameworks (macOS).
 #
 # Usage:
 #   ./build.sh              # Release build -> dist/CSPICE.xcframework
@@ -30,7 +33,7 @@ if [[ "${1:-}" == "--clean" ]]; then
 fi
 
 if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
-	sed -n '2,14p' "$0"
+	sed -n '2,18p' "$0"
 	exit 0
 fi
 
@@ -45,6 +48,32 @@ if [[ ! -d "${PROJECT}" ]]; then
 fi
 
 log() { printf '==> %s\n' "$*"; }
+
+framework_binary() {
+	local fw="$1"
+	if [[ -f "${fw}/Versions/Current/${TARGET}" ]]; then
+		echo "${fw}/Versions/Current/${TARGET}"
+	elif [[ -f "${fw}/${TARGET}" ]]; then
+		echo "${fw}/${TARGET}"
+	else
+		return 1
+	fi
+}
+
+verify_dynamic_framework() {
+	local fw="$1"
+	local binary
+	binary="$(framework_binary "${fw}")" || {
+		echo "error: ${TARGET} binary not found in ${fw}" >&2
+		exit 1
+	}
+	if ! file "${binary}" | grep -q 'dynamically linked shared library'; then
+		echo "error: ${binary} is not a dynamic library (check MACH_O_TYPE = mh_dylib)" >&2
+		file "${binary}" >&2
+		exit 1
+	fi
+	log "Verified dynamic ${binary}"
+}
 
 # sdk archs (space-separated) output-label
 build_slice() {
@@ -74,6 +103,7 @@ build_slice() {
 		ONLY_ACTIVE_ARCH=NO
 		SKIP_INSTALL=NO
 		BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+		MACH_O_TYPE=mh_dylib
 		CODE_SIGNING_ALLOWED=NO
 		CODE_SIGN_IDENTITY=-
 	)
@@ -94,6 +124,7 @@ build_slice() {
 	# Copy to a stable path for -create-xcframework.
 	ditto "${built}" "${dest}"
 	xattr -cr "${dest}" 2>/dev/null || true
+	verify_dynamic_framework "${dest}"
 
 	log "Built ${dest}"
 }

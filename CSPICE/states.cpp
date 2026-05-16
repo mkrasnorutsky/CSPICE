@@ -40,7 +40,17 @@ int main()
 	//etbeg = 2447893;
 	etbeg = 2451545;
 	//planet_pv(targ, etbeg, state);
-	Asteroids::GetInstance().Calculate(299, etbeg, state);
+	char error[1] = {0};
+	AsteroidResult result = asteroids_calculate(etbeg, 299, 0, error, sizeof(error));
+	if (result.valid)
+	{
+		state[0] = result.pos_x;
+		state[1] = result.pos_y;
+		state[2] = result.pos_z;
+		state[3] = result.vel_x;
+		state[4] = result.vel_y;
+		state[5] = result.vel_z;
+	}
 
       /*
       Convert the ET (ephemeris time) into a UTC time string

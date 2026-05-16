@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = 'CSPICE'
-  s.version      = '1.0.2'
+  s.version      = '1.0.3'
   s.summary      = 'NAIF CSPICE toolkit with Asteroids ephemeris API for iOS and macOS.'
   s.description  = <<-DESC
-    Binary pod distributing CSPICE as a static XCFramework (iOS device,
+    Binary pod distributing CSPICE as a dynamic XCFramework (iOS device,
     iOS Simulator, macOS universal). Public API: CSPICE module umbrella header
-    and C++ Asteroids.h for SPK/JPL asteroid calculations.
+    and Asteroids.h for SPK/JPL asteroid calculations.
 
     Before publishing to CocoaPods, run `./build.sh` to produce
     `dist/CSPICE.xcframework`, or rely on the prepare_command below.
@@ -24,7 +24,6 @@ Pod::Spec.new do |s|
   s.osx.deployment_target  = '10.13'
 
   s.vendored_frameworks = 'dist/CSPICE.xcframework'
-  s.static_framework      = true
 
   s.pod_target_xcconfig = {
     'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',

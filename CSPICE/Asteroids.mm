@@ -7,9 +7,10 @@
  *
  */
 
-#include <CSPICE/Asteroids.h>
+#include "Asteroids.h"
 
 #include <stdio.h>
+#include <cstring>
 #include <sstream>
 #include <map>
 #include "SpiceUsr.h"
@@ -26,6 +27,25 @@
 #import <Foundation/Foundation.h>
 
 using namespace std;
+
+class Asteroids
+{
+    vector<int> _recentlyAddedObjects;
+
+    Asteroids();
+    void LoadEpheFiles(string path);
+
+public:
+    vector<double> Calculate(double jd, int jplID, int &obsID, string &errorDescription) const;
+    vector<int> recentlyAddedObjects() const { return _recentlyAddedObjects; }
+
+    static Asteroids &GetInstance();
+    void loadEpheFiles(string path) { LoadEpheFiles(path); }
+    static bool objectIsPresent(int naifId);
+    static bool jdisPresent(int naifId, double jd);
+    static string asteroidName(int naifId);
+    static vector<int> loadedSpkIds();
+};
 
 static NSString* documentsPath()
 {
@@ -312,3 +332,112 @@ std::vector<int> Asteroids::loadedSpkIds()
 	GetInstance();
 	return SPKFiles::GetInstance().GetIds();
 }
+
+static thread_local string g_lastAsteroidName;
+static thread_local int g_lastObserverId = 0;
+
+extern "C" {
+
+bool asteroids_load_ephe_files(const char *path)
+{
+	if (!path)
+		return false;
+
+	Asteroids::GetInstance().loadEpheFiles(path);
+	return true;
+}
+
+AsteroidResult asteroids_calculate(double jd, int jpl_id, int obs_id,
+                                   char *error_buffer, int error_buffer_size)
+{
+	AsteroidResult r = {0};
+
+	if (error_buffer && error_buffer_size > 0)
+		error_buffer[0] = '\0';
+
+	int observer = obs_id;
+	string errorDescription;
+	vector<double> result = Asteroids::GetInstance().Calculate(jd, jpl_id, observer, errorDescription);
+	g_lastObserverId = observer;
+
+	if (result.size() >= 6)
+	{
+		r.pos_x = result[0];
+		r.pos_y = result[1];
+		r.pos_z = result[2];
+		r.vel_x = result[3];
+		r.vel_y = result[4];
+		r.vel_z = result[5];
+	}
+
+	r.valid = errorDescription.empty();
+
+	if (error_buffer && error_buffer_size > 0 && !errorDescription.empty())
+	{
+		strncpy(error_buffer, errorDescription.c_str(), error_buffer_size - 1);
+		error_buffer[error_buffer_size - 1] = '\0';
+	}
+
+	return r;
+}
+
+bool asteroids_object_is_present(int naif_id)
+{
+	return Asteroids::objectIsPresent(naif_id);
+}
+
+bool asteroids_jd_is_present(int naif_id, double jd)
+{
+	return Asteroids::jdisPresent(naif_id, jd);
+}
+
+const char *asteroids_asteroid_name(int naif_id)
+{
+	g_lastAsteroidName = Asteroids::asteroidName(naif_id);
+	return g_lastAsteroidName.c_str();
+}
+
+int asteroids_last_observer_id(void)
+{
+	return g_lastObserverId;
+}
+
+int asteroids_loaded_spk_id_count(void)
+{
+	return (int)Asteroids::loadedSpkIds().size();
+}
+
+int asteroids_copy_loaded_spk_ids(int *ids, int max_count)
+{
+	vector<int> loaded = Asteroids::loadedSpkIds();
+	int count = (int)loaded.size();
+	if (!ids || max_count <= 0)
+		return count;
+
+	int toCopy = count < max_count ? count : max_count;
+	for (int i = 0; i < toCopy; ++i)
+		ids[i] = loaded[i];
+
+	return count;
+}
+
+int asteroids_recently_added_count(void)
+{
+	return (int)Asteroids::GetInstance().recentlyAddedObjects().size();
+}
+
+int asteroids_copy_recently_added_ids(int *ids, int max_count)
+{
+	vector<int> recent = Asteroids::GetInstance().recentlyAddedObjects();
+	int count = (int)recent.size();
+	if (!ids || max_count <= 0)
+		return count;
+
+	int toCopy = count < max_count ? count : max_count;
+	for (int i = 0; i < toCopy; ++i)
+		ids[i] = recent[i];
+
+	return count;
+}
+
+} /* extern "C" */
