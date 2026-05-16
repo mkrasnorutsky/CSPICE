@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CSPICE'
-  s.version      = '1.0.0'
+  s.version      = '1.0.1'
   s.summary      = 'NAIF CSPICE toolkit with Asteroids ephemeris API for iOS and macOS.'
   s.description  = <<-DESC
     Binary pod distributing CSPICE as a static XCFramework (iOS device,
