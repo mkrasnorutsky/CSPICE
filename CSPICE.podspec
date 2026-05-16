@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   # Update these URLs before `pod trunk push`.
   s.homepage     = 'https://github.com/mkrasnorutsky/CSPICE.git'
   s.license      = { :type => 'Custom', :file => 'LICENSE' }
-  s.author       = { 'Mikhail Krasnorutsky' => 'mkrasnorutsky@mail.ru' }
+  s.author       = { 'Mikhail Krasnorutsky' => 'friendofthai@gmail.com' }
   s.source       = {
     :git => 'https://github.com/mkrasnorutsky/CSPICE.git',
     :tag => "cspice-#{s.version}"
