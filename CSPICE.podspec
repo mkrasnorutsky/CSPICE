@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CSPICE'
-  s.version      = '1.0.1'
+  s.version      = '1.0.0'
   s.summary      = 'NAIF CSPICE toolkit with Asteroids ephemeris API for iOS and macOS.'
   s.description  = <<-DESC
     Binary pod distributing CSPICE as a static XCFramework (iOS device,
@@ -25,14 +25,6 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = 'dist/CSPICE.xcframework'
   s.static_framework      = true
-
-  # Build the XCFramework when installing from a git tag that does not include dist/.
-  s.prepare_command = <<-CMD
-    set -e
-    if [ ! -d "dist/CSPICE.xcframework" ]; then
-      ./build.sh
-    fi
-  CMD
 
   s.pod_target_xcconfig = {
     'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',
