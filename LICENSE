@@ -1,0 +1,10 @@
+Copyright (c) 2009-2026 Mikhail Krasnorutsky. All rights reserved.
+
+This software bundles the NASA/NAIF CSPICE toolkit (C sources) and an
+Objective-C++/C++ wrapper (Asteroids API). Redistribution and use are subject
+to your agreement with the copyright holder and to the terms under which
+NAIF distributes CSPICE (see https://naif.jpl.nasa.gov/naif/rules.html).
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
