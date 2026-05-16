@@ -1,0 +1,6 @@
+framework module CSPICE {
+  umbrella header "CSPICE.h"
+  export *
+
+  module * { export * }
+}
