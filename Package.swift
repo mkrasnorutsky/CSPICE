@@ -6,6 +6,7 @@ let package = Package(
     name: "CSPICE",
     platforms: [
         .iOS(.v13),
+        .tvOS(.v15),
         .macOS(.v10_15)
     ],
     products: [
