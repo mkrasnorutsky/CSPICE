@@ -2,13 +2,15 @@
 #
 # Build CSPICE.xcframework for distribution (dynamic framework slices).
 #
-# XCFramework slices (3 frameworks — universal macOS + iOS sim, thin iOS device):
-#   - macOS:           arm64 + x86_64 (single universal framework)
-#   - iOS device:      arm64
-#   - iOS simulator:   arm64 + x86_64 (single universal framework)
+# XCFramework slices (5 frameworks — universal macOS + simulators, thin device slices):
+#   - macOS:              arm64 + x86_64 (single universal framework)
+#   - iOS device:         arm64
+#   - iOS simulator:      arm64 + x86_64 (single universal framework)
+#   - tvOS device:        arm64
+#   - tvOS simulator:     arm64 + x86_64 (single universal framework)
 #
 # Each slice is a dynamic CSPICE.framework (mh_dylib). Apps must embed the
-# framework (iOS) or copy it into Contents/Frameworks (macOS).
+# framework (iOS, tvOS) or copy it into Contents/Frameworks (macOS).
 #
 # Usage:
 #   ./build.sh              # Release build -> dist/CSPICE.xcframework
@@ -132,9 +134,11 @@ build_slice() {
 rm -rf "${BUILD_ROOT}" "${OUTPUT_DIR}"
 mkdir -p "${FRAMEWORKS_DIR}" "${OUTPUT_DIR}"
 
-build_slice macosx           "arm64 x86_64"  macos
-build_slice iphoneos         arm64           ios
-build_slice iphonesimulator  "arm64 x86_64"  ios-simulator
+build_slice macosx              "arm64 x86_64"  macos
+build_slice iphoneos            arm64           ios
+build_slice iphonesimulator     "arm64 x86_64"  ios-simulator
+build_slice appletvos           arm64           tvos
+build_slice appletvsimulator    "arm64 x86_64"  tvos-simulator
 
 log "Creating ${OUTPUT_XCFRAMEWORK}"
 
@@ -142,6 +146,8 @@ xcodebuild -create-xcframework \
 	-framework "${FRAMEWORKS_DIR}/macos/CSPICE.framework" \
 	-framework "${FRAMEWORKS_DIR}/ios/CSPICE.framework" \
 	-framework "${FRAMEWORKS_DIR}/ios-simulator/CSPICE.framework" \
+	-framework "${FRAMEWORKS_DIR}/tvos/CSPICE.framework" \
+	-framework "${FRAMEWORKS_DIR}/tvos-simulator/CSPICE.framework" \
 	-output "${OUTPUT_XCFRAMEWORK}"
 
 log "Done: ${OUTPUT_XCFRAMEWORK}"

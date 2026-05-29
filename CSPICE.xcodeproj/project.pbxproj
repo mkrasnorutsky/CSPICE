@@ -2040,7 +2040,6 @@
 		04EC00772378411B001181E7 /* dlafps.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF5B23784105001181E7 /* dlafps.c */; };
 		04EC00782378411B001181E7 /* pckw02_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF5C23784106001181E7 /* pckw02_c.c */; };
 		04EC00792378411B001181E7 /* SpiceSrf.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF5D23784106001181E7 /* SpiceSrf.h */; };
-		04EC007A2378411B001181E7 /* mkprodct.csh in Resources */ = {isa = PBXBuildFile; fileRef = 04ECFF5E23784106001181E7 /* mkprodct.csh */; };
 		04EC007B2378411B001181E7 /* zzdsksph.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF5F23784107001181E7 /* zzdsksph.c */; };
 		04EC007C2378411B001181E7 /* srfcss_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF6023784107001181E7 /* srfcss_c.c */; };
 		04EC007D2378411B001181E7 /* ckgr06.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF6123784107001181E7 /* ckgr06.c */; };
@@ -6766,7 +6765,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				048BB993237B055B00221E67 /* AsteroidNames.txt in Resources */,
-				04EC007A2378411B001181E7 /* mkprodct.csh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9021,8 +9019,9 @@
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
 			};
 			name = Distribution;
 		};
@@ -9171,8 +9170,9 @@
 				PRODUCT_NAME = CSPICE;
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
 			};
 			name = Debug;
 		};
@@ -9203,8 +9203,9 @@
 				PRODUCT_NAME = CSPICE;
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
 			};
 			name = Release;
 		};
