@@ -8,11 +8,13 @@
  */
 
 #include "Asteroids.h"
+#include "AsteroidNames.h"
 
 #include <stdio.h>
 #include <cstring>
 #include <sstream>
 #include <map>
+#include <string>
 #include "SpiceUsr.h"
 #include "SPKFileInfo.h"
 #include "Directory.h"
@@ -28,6 +30,8 @@
 
 using namespace std;
 
+std::string Asteroids_docsPath;
+
 class Asteroids
 {
     vector<int> _recentlyAddedObjects;
@@ -39,7 +43,7 @@ public:
     vector<double> Calculate(double jd, int jplID, int &obsID, string &errorDescription) const;
     vector<int> recentlyAddedObjects() const { return _recentlyAddedObjects; }
 
-    static Asteroids &GetInstance();
+    static Asteroids* GetInstancePtr();
     void loadEpheFiles(string path) { LoadEpheFiles(path); }
     static bool objectIsPresent(int naifId);
     static bool jdisPresent(int naifId, double jd);
@@ -47,32 +51,9 @@ public:
     static vector<int> loadedSpkIds();
 };
 
-static NSString* documentsPath()
-{
-#if TARGET_OS_IPHONE
-    NSString* path = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES ) objectAtIndex:0];
-    
-
-#else
-    
-//Sandboxed
-#  if 1
-    NSString* path = NSHomeDirectory();
-#  else
-    NSString* path = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES ) objectAtIndex:0];
-    
-    path = [path stringByAppendingPathComponent:PATH_TO_DOCUMENTS];
-#  endif
-    
-#endif
-    
-    return path;
-}
-
-
 const char* SPICEFilesFolder()
 {
-	return [documentsPath() UTF8String];
+	return Asteroids_docsPath.c_str();
 }
 
 int display_info(char* spk);
@@ -96,29 +77,17 @@ Asteroids::Asteroids()
 {
 	erract_c("SET", sizeof("RETURN") + 1, "RETURN");
     
-    map<int,string> asteroidNames;
-    NSString* resourceName = [[NSBundle bundleWithIdentifier:@"co.krasnorutsky.CSPICE"]pathForResource:@"AsteroidNames" ofType:@"txt"];
-    if (resourceName)
+    map<int, string> nameByNaifId;
+    for (size_t i = 0; i < ASTEROID_NAMES_COUNT; ++i)
     {
-        NSString* astNames = [[NSString alloc]initWithContentsOfFile:resourceName encoding:NSUTF8StringEncoding error:nil];
-        if (astNames)
-        {
-            NSArray* list = [astNames componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-            
-            for (NSString* s in list)
-            {
-                NSArray* components = [s componentsSeparatedByString:@"\t"];
-                if (components.count == 2)
-                {
-                    asteroidNames[NAIF_INTEGER_ID_CODES_ASTEROID_SHIFT + [components.firstObject intValue]] = [components.lastObject UTF8String];
-                }
-            }
-        }
+        const AsteroidNameEntry& entry = asteroidNames[i];
+        nameByNaifId[NAIF_INTEGER_ID_CODES_ASTEROID_SHIFT + entry.id] = entry.name;
     }
     
-    SPKFiles::GetInstance().setNames(asteroidNames);
+    SPKFiles::GetInstance().setNames(nameByNaifId);
 	
-    NSString* idsListFileName = [documentsPath() stringByAppendingPathComponent:@"Asteroids.json"];
+    const string idsListPath = Asteroids_docsPath + "/Asteroids.json";
+    NSString* idsListFileName = [NSString stringWithUTF8String:idsListPath.c_str()];
     NSData* d = [NSData dataWithContentsOfFile:idsListFileName];
     NSArray* previousObjectIds = nil;
     if (d)
@@ -302,34 +271,55 @@ vector<double> Asteroids::Calculate(double jd, int jplID, int& obsID, string& er
 	return result;
 }
 
-Asteroids& Asteroids::GetInstance()
+Asteroids* Asteroids::GetInstancePtr()
 {
+	if (Asteroids_docsPath.empty())
+	{
+		return nullptr;
+	}
+
 	static Asteroids ast;
-	
-	return ast;
+
+	return &ast;
 }
 
 bool Asteroids::objectIsPresent(int naifId)
 {
-	GetInstance();
+	if (!GetInstancePtr())
+	{
+		return false;
+	}
+
 	return SPKFiles::GetInstance().ObjectIsPresent(naifId);
 }
 
 bool Asteroids::jdisPresent(int naifId, double jd)
 {
-	GetInstance();
+	if (!GetInstancePtr())
+	{
+		return false;
+	}
+
 	return SPKFiles::GetInstance().JDisPresent(naifId, jd);
 }
 
 std::string Asteroids::asteroidName(int naifId)
 {
-	GetInstance();
+	if (!GetInstancePtr())
+	{
+		return std::string();
+	}
+
 	return SPKFiles::GetInstance().GetAsteroidName(naifId);
 }
 
 std::vector<int> Asteroids::loadedSpkIds()
 {
-	GetInstance();
+	if (!GetInstancePtr())
+	{
+		return std::vector<int>();
+	}
+
 	return SPKFiles::GetInstance().GetIds();
 }
 
@@ -338,12 +328,28 @@ static thread_local int g_lastObserverId = 0;
 
 extern "C" {
 
+void asteroids_init(const char* docsPath)
+{
+	if (docsPath)
+	{
+		Asteroids_docsPath = docsPath;
+	}
+	else
+	{
+		Asteroids_docsPath.clear();
+	}
+}
+
 bool asteroids_load_ephe_files(const char *path)
 {
 	if (!path)
 		return false;
 
-	Asteroids::GetInstance().loadEpheFiles(path);
+	Asteroids* instance = Asteroids::GetInstancePtr();
+	if (!instance)
+		return false;
+
+	instance->loadEpheFiles(path);
 	return true;
 }
 
@@ -355,9 +361,20 @@ AsteroidResult asteroids_calculate(double jd, int jpl_id, int obs_id,
 	if (error_buffer && error_buffer_size > 0)
 		error_buffer[0] = '\0';
 
+	Asteroids* instance = Asteroids::GetInstancePtr();
+	if (!instance)
+	{
+		if (error_buffer && error_buffer_size > 0)
+		{
+			strncpy(error_buffer, "Asteroids not initialized.", error_buffer_size - 1);
+			error_buffer[error_buffer_size - 1] = '\0';
+		}
+		return r;
+	}
+
 	int observer = obs_id;
 	string errorDescription;
-	vector<double> result = Asteroids::GetInstance().Calculate(jd, jpl_id, observer, errorDescription);
+	vector<double> result = instance->Calculate(jd, jpl_id, observer, errorDescription);
 	g_lastObserverId = observer;
 
 	if (result.size() >= 6)
@@ -423,12 +440,19 @@ int asteroids_copy_loaded_spk_ids(int *ids, int max_count)
 
 int asteroids_recently_added_count(void)
 {
-	return (int)Asteroids::GetInstance().recentlyAddedObjects().size();
+	Asteroids* instance = Asteroids::GetInstancePtr();
+	if (!instance)
+	{
+		return 0;
+	}
+
+	return (int)instance->recentlyAddedObjects().size();
 }
 
 int asteroids_copy_recently_added_ids(int *ids, int max_count)
 {
-	vector<int> recent = Asteroids::GetInstance().recentlyAddedObjects();
+	Asteroids* instance = Asteroids::GetInstancePtr();
+	vector<int> recent = instance ? instance->recentlyAddedObjects() : vector<int>();
 	int count = (int)recent.size();
 	if (!ids || max_count <= 0)
 		return count;

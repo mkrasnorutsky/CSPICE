@@ -17,6 +17,8 @@ typedef struct {
     bool valid;
 } AsteroidResult;
 
+void asteroids_init(const char* docsPath);
+
 bool asteroids_load_ephe_files(const char* path);
 
 AsteroidResult asteroids_calculate(

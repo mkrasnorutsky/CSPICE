@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		048BB993237B055B00221E67 /* AsteroidNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 048BB992237B055A00221E67 /* AsteroidNames.txt */; };
+		048BB995237B055B00221E68 /* AsteroidNames.h in Headers */ = {isa = PBXBuildFile; fileRef = 048BB994237B055B00221E68 /* AsteroidNames.h */; };
 		04DDC1212375A236003F01DA /* CSPICE.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDC11F2375A236003F01DA /* CSPICE.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDD8662375A73D003F01DA /* zzxlatei.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD01C2375A727003F01DA /* zzxlatei.c */; };
 		04DDD8672375A73D003F01DA /* spkopa_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD01D2375A727003F01DA /* spkopa_c.c */; };
@@ -2204,7 +2204,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		048BB992237B055A00221E67 /* AsteroidNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AsteroidNames.txt; sourceTree = "<group>"; };
+		048BB994237B055B00221E68 /* AsteroidNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsteroidNames.h; sourceTree = "<group>"; };
 		04DDC11C2375A236003F01DA /* CSPICE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSPICE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DDC11F2375A236003F01DA /* CSPICE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSPICE.h; sourceTree = "<group>"; };
 		04DDC1202375A236003F01DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -4433,7 +4433,7 @@
 		04DDC11E2375A236003F01DA /* CSPICE */ = {
 			isa = PBXGroup;
 			children = (
-				048BB992237B055A00221E67 /* AsteroidNames.txt */,
+				048BB994237B055B00221E68 /* AsteroidNames.h */,
 				04DDE0B62375A90A003F01DA /* Asteroids.h */,
 				04DDE0B82375A90A003F01DA /* Asteroids.mm */,
 				04DDE0B42375A909003F01DA /* SPKFileInfo.cpp */,
@@ -6665,6 +6665,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DDDCE02375A741003F01DA /* SpiceZpr.h in Headers */,
+				048BB995237B055B00221E68 /* AsteroidNames.h in Headers */,
 				04DDE0BD2375A90A003F01DA /* Asteroids.h in Headers */,
 				04DDE0BA2375A90A003F01DA /* SPKFileInfo.h in Headers */,
 				04DDD9282375A73E003F01DA /* f2c.h in Headers */,
@@ -6764,7 +6765,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048BB993237B055B00221E67 /* AsteroidNames.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
