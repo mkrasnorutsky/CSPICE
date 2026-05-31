@@ -2204,9 +2204,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		048BB994237B055B00221E68 /* AsteroidNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsteroidNames.h; sourceTree = "<group>"; };
+		048BB994237B055B00221E68 /* AsteroidNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsteroidNames.h; path = common/include/CSPICE/AsteroidNames.h; sourceTree = SOURCE_ROOT; };
 		04DDC11C2375A236003F01DA /* CSPICE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSPICE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		04DDC11F2375A236003F01DA /* CSPICE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSPICE.h; sourceTree = "<group>"; };
+		04DDC11F2375A236003F01DA /* CSPICE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CSPICE.h; path = common/include/CSPICE/CSPICE.h; sourceTree = SOURCE_ROOT; };
 		04DDC1202375A236003F01DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DDD01C2375A727003F01DA /* zzxlatei.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zzxlatei.c; sourceTree = "<group>"; };
 		04DDD01D2375A727003F01DA /* spkopa_c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = spkopa_c.c; sourceTree = "<group>"; };
@@ -4110,13 +4110,13 @@
 		04DDD7872375A73C003F01DA /* zzekac05.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zzekac05.c; sourceTree = "<group>"; };
 		04DDD7882375A73C003F01DA /* cknr03.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cknr03.c; sourceTree = "<group>"; };
 		04DDD7892375A73C003F01DA /* inssub.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inssub.c; sourceTree = "<group>"; };
-		04DDE0B32375A909003F01DA /* SPKFileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPKFileInfo.h; sourceTree = "<group>"; };
-		04DDE0B42375A909003F01DA /* SPKFileInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SPKFileInfo.cpp; sourceTree = "<group>"; };
+		04DDE0B32375A909003F01DA /* SPKFileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPKFileInfo.h; path = common/src/SPKFileInfo.h; sourceTree = SOURCE_ROOT; };
+		04DDE0B42375A909003F01DA /* SPKFileInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SPKFileInfo.cpp; path = common/src/SPKFileInfo.cpp; sourceTree = SOURCE_ROOT; };
 		04DDE0B52375A90A003F01DA /* states.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = states.cpp; sourceTree = "<group>"; };
-		04DDE0B62375A90A003F01DA /* Asteroids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asteroids.h; sourceTree = "<group>"; };
-		04DDE0B82375A90A003F01DA /* Asteroids.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Asteroids.cpp; sourceTree = "<group>"; };
-		04DDE19B2375EBFC003F01DA /* Directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directory.h; sourceTree = "<group>"; };
-		04DDE19C2375EBFD003F01DA /* Directory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Directory.cpp; sourceTree = "<group>"; };
+		04DDE0B62375A90A003F01DA /* Asteroids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Asteroids.h; path = common/include/CSPICE/Asteroids.h; sourceTree = SOURCE_ROOT; };
+		04DDE0B82375A90A003F01DA /* Asteroids.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Asteroids.cpp; path = common/src/Asteroids.cpp; sourceTree = SOURCE_ROOT; };
+		04DDE19B2375EBFC003F01DA /* Directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Directory.h; path = common/src/Directory.h; sourceTree = SOURCE_ROOT; };
+		04DDE19C2375EBFD003F01DA /* Directory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Directory.cpp; path = common/src/Directory.cpp; sourceTree = SOURCE_ROOT; };
 		04ECFE89237840B8001181E7 /* spkcvt_c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = spkcvt_c.c; sourceTree = "<group>"; };
 		04ECFE8A237840B8001181E7 /* zzddhmnm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zzddhmnm.c; sourceTree = "<group>"; };
 		04ECFE8B237840B9001181E7 /* latsrf_c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = latsrf_c.c; sourceTree = "<group>"; };
@@ -9004,6 +9004,12 @@
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_PREPROCESSOR_DEFINITIONS = CSPICE_SKIP_PLATFORM_CHECK;
 				INFOPLIST_FILE = CSPICE/Info.plist;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/common/include",
+					"$(SRCROOT)/common/include/CSPICE",
+					"$(SRCROOT)/common/src",
+					"$(SRCROOT)/CSPICE/CSPICE/src/cspice",
+				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -9157,6 +9163,12 @@
 					CSPICE_SKIP_PLATFORM_CHECK,
 				);
 				INFOPLIST_FILE = CSPICE/Info.plist;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/common/include",
+					"$(SRCROOT)/common/include/CSPICE",
+					"$(SRCROOT)/common/src",
+					"$(SRCROOT)/CSPICE/CSPICE/src/cspice",
+				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -9190,6 +9202,12 @@
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_PREPROCESSOR_DEFINITIONS = CSPICE_SKIP_PLATFORM_CHECK;
 				INFOPLIST_FILE = CSPICE/Info.plist;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/common/include",
+					"$(SRCROOT)/common/include/CSPICE",
+					"$(SRCROOT)/common/src",
+					"$(SRCROOT)/CSPICE/CSPICE/src/cspice",
+				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
