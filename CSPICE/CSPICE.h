@@ -6,12 +6,20 @@
 //  Copyright © 2019 Krasnorutsky. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef CSPICE_H
+#define CSPICE_H
 
-//! Project version number for CSPICE.
-FOUNDATION_EXPORT double CSPICEVersionNumber;
+#include <CSPICE/Asteroids.h>
 
-//! Project version string for CSPICE.
-FOUNDATION_EXPORT const unsigned char CSPICEVersionString[];
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-// Public C API: Asteroids.h (usable from C, C++, and ObjC++ translation units).
+extern double CSPICEVersionNumber;
+extern const unsigned char CSPICEVersionString[];
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* CSPICE_H */
