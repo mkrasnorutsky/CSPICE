@@ -43,14 +43,13 @@ int asteroids_copy_loaded_spk_ids(int* ids, int max_count);
 int asteroids_recently_added_count(void);
 int asteroids_copy_recently_added_ids(int* ids, int max_count);
 
-enum AsteroidCategory : unsigned
-{
+typedef enum AsteroidCategory {
     AsteroidCategory_DwarfPlanets = 0,
     AsteroidCategory_KuiperBeltObjects,
     AsteroidCategory_Centaurs,
     AsteroidCategory_ClassicalAsteroids,
     AsteroidCategory_AstrologicalAsteroids
-};
+} AsteroidCategory;
 
 unsigned asteroid_category_count(void);
 const char* asteroid_category_name(AsteroidCategory category);
