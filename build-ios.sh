@@ -27,6 +27,7 @@ BUILD_ROOT="${SCRIPT_DIR}/build"
 FRAMEWORKS_DIR="${BUILD_ROOT}/frameworks"
 OUTPUT_DIR="${SCRIPT_DIR}/dist"
 OUTPUT_XCFRAMEWORK="${OUTPUT_DIR}/CSPICE.xcframework"
+OUTPUT_ZIP="${OUTPUT_DIR}/CSPICE.xcframework.zip"
 
 if [[ "${1:-}" == "--clean" ]]; then
 	rm -rf "${BUILD_ROOT}" "${OUTPUT_DIR}"
@@ -41,6 +42,11 @@ fi
 
 if ! command -v xcodebuild >/dev/null 2>&1; then
 	echo "error: xcodebuild not found (install Xcode and select it with xcode-select)" >&2
+	exit 1
+fi
+
+if ! command -v swift >/dev/null 2>&1; then
+	echo "error: swift not found (install Xcode Command Line Tools)" >&2
 	exit 1
 fi
 
@@ -150,7 +156,19 @@ xcodebuild -create-xcframework \
 	-framework "${FRAMEWORKS_DIR}/tvos-simulator/CSPICE.framework" \
 	-output "${OUTPUT_XCFRAMEWORK}"
 
+log "Archiving ${OUTPUT_ZIP}"
+rm -f "${OUTPUT_ZIP}"
+(
+	cd "${OUTPUT_DIR}"
+	ditto -c -k --sequesterRsrc --keepParent "CSPICE.xcframework" "CSPICE.xcframework.zip"
+)
+
+log "Calculating SwiftPM checksum"
+CHECKSUM="$(swift package compute-checksum "${OUTPUT_ZIP}")"
+
 log "Done: ${OUTPUT_XCFRAMEWORK}"
+log "Zip: ${OUTPUT_ZIP}"
+log "SPM checksum: ${CHECKSUM}"
 log "Library identifiers:"
 find "${OUTPUT_XCFRAMEWORK}" -mindepth 1 -maxdepth 1 -type d ! -name '.*' -exec basename {} \; \
 	| sort | sed 's/^/  /'

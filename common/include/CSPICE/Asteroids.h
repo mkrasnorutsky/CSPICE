@@ -57,6 +57,7 @@ const char* asteroid_category_name(AsteroidCategory category);
 unsigned asteroid_count_for_category(AsteroidCategory category);
 unsigned asteroid_number(AsteroidCategory category, unsigned asteroidIndex);
 unsigned asteroid_naif_id(AsteroidCategory category, unsigned asteroidIndex);
+const char* asteroid_name(AsteroidCategory category, unsigned asteroidIndex);
 void asteroid_generate_tf_file_for_asteroid_naif_id(unsigned naif_id);
 
 #ifdef __cplusplus

@@ -539,106 +539,183 @@ int asteroids_copy_recently_added_ids(int* ids, int max_count)
 
 } /* extern "C" */
 
-static const std::vector<
-    std::pair<
-        unsigned,
-        std::vector<std::pair<std::string, unsigned>>
-    >
-> kAsteroidCatalog =
+typedef struct
+{
+    const char* name;
+    unsigned number;
+} AsteroidInfo;
+
+typedef struct
+{
+    unsigned category;
+    const AsteroidInfo* asteroids;
+    unsigned asteroidCount;
+} AsteroidCategoryInfo;
+
+static const AsteroidInfo kDwarfPlanets[] =
+{
+    {"Ceres",    1},
+    {"Pluto",    134340},
+    {"Eris",     136199},
+    {"Haumea",   136108},
+    {"Makemake", 136472}
+};
+
+static const AsteroidInfo kKuiperBeltObjects[] =
+{
+    {"Quaoar",   50000},
+    {"Orcus",    90482},
+    {"Sedna",    90377},
+    {"Gonggong", 225088},
+    {"Ixion",    28978},
+    {"Varuna",   20000},
+    {"Salacia",  120347},
+    {"Varda",    174567},
+    {"Huya",     38628},
+    {"Chaos",    19521},
+    {"Arrokoth", 486958}
+};
+
+static const AsteroidInfo kCentaurs[] =
+{
+    {"Chiron",   2060},
+    {"Pholus",   5145},
+    {"Nessus",   7066},
+    {"Chariklo", 10199},
+    {"Asbolus",  8405},
+    {"Hylonome", 10370},
+    {"Cyllarus", 52975},
+    {"Crantor",  83982},
+    {"Echeclus", 60558},
+    {"Bienor",   54598},
+    {"Amycus",   55576},
+    {"Okyrhoe",  52872},
+    {"Thereus",  32532}
+};
+
+static const AsteroidInfo kClassicalAsteroids[] =
+{
+    {"Ceres",   1},
+    {"Pallas",  2},
+    {"Juno",    3},
+    {"Vesta",   4},
+    {"Astraea", 5},
+    {"Hebe",    6},
+    {"Iris",    7},
+    {"Flora",   8},
+    {"Metis",   9},
+    {"Hygiea", 10}
+};
+
+static const AsteroidInfo kAstrologicalAsteroids[] =
+{
+    {"Eros",       433},
+    {"Psyche",     16},
+    {"Amor",       1221},
+    {"Fortuna",    19},
+    {"Europa",     52},
+    {"Eunomia",    15},
+    {"Interamnia", 704},
+    {"Davida",     511},
+    {"Sylvia",     87},
+    {"Themis",     24},
+    {"Bamberga",   324},
+    {"Euphrosyne", 31},
+    {"Doris",      48},
+    {"Thisbe",     88},
+    {"Urania",     30},
+    {"Echo",       60},
+    {"Panacea",    2878},
+    {"Tyche",      258},
+    {"Achilles",   588},
+    {"Patroclus",  617}
+};
+
+#define ARRAY_COUNT(x) ((unsigned)(sizeof(x) / sizeof((x)[0])))
+
+static const AsteroidCategoryInfo kAsteroidCatalog[] =
 {
     {
         AsteroidCategory_DwarfPlanets,
-        {
-            {"Ceres",    1},
-            {"Pluto",    134340},
-            {"Eris",     136199},
-            {"Haumea",   136108},
-            {"Makemake", 136472}
-        }
+        kDwarfPlanets,
+        ARRAY_COUNT(kDwarfPlanets)
     },
-
     {
         AsteroidCategory_KuiperBeltObjects,
-        {
-            {"Quaoar",   50000},
-            {"Orcus",    90482},
-            {"Sedna",    90377},
-            {"Gonggong", 225088},
-            {"Ixion",    28978},
-            {"Varuna",   20000},
-            {"Salacia",  120347},
-            {"Varda",    174567},
-            {"Huya",     38628},
-            {"Chaos",    19521},
-            {"Arrokoth", 486958}
-        }
+        kKuiperBeltObjects,
+        ARRAY_COUNT(kKuiperBeltObjects)
     },
-
     {
         AsteroidCategory_Centaurs,
-        {
-            {"Chiron",   2060},
-            {"Pholus",   5145},
-            {"Nessus",   7066},
-            {"Chariklo", 10199},
-            {"Asbolus",  8405},
-            {"Hylonome", 10370},
-            {"Cyllarus", 52975},
-            {"Crantor",  83982},
-            {"Echeclus", 60558},
-            {"Bienor",   54598},
-            {"Amycus",   55576},
-            {"Okyrhoe",  52872},
-            {"Thereus",  32532}
-        }
+        kCentaurs,
+        ARRAY_COUNT(kCentaurs)
     },
-
     {
         AsteroidCategory_ClassicalAsteroids,
-        {
-            {"Ceres",   1},
-            {"Pallas",  2},
-            {"Juno",    3},
-            {"Vesta",   4},
-            {"Astraea", 5},
-            {"Hebe",    6},
-            {"Iris",    7},
-            {"Flora",   8},
-            {"Metis",   9},
-            {"Hygiea", 10}
-        }
+        kClassicalAsteroids,
+        ARRAY_COUNT(kClassicalAsteroids)
     },
-
     {
         AsteroidCategory_AstrologicalAsteroids,
-        {
-            {"Eros",        433},
-            {"Psyche",      16},
-            {"Amor",        1221},
-            {"Fortuna",     19},
-            {"Europa",      52},
-            {"Eunomia",     15},
-            {"Interamnia",  704},
-            {"Davida",      511},
-            {"Sylvia",      87},
-            {"Themis",      24},
-            {"Bamberga",    324},
-            {"Euphrosyne",  31},
-            {"Doris",       48},
-            {"Thisbe",      88},
-            {"Urania",      30},
-            {"Echo",        60},
-            {"Panacea",     2878},
-            {"Tyche",       258},
-            {"Achilles",    588},
-            {"Patroclus",   617}
-        }
+        kAstrologicalAsteroids,
+        ARRAY_COUNT(kAstrologicalAsteroids)
     }
 };
 
 unsigned asteroid_category_count(void)
 {
-    return static_cast<unsigned>(kAsteroidCatalog.size());
+    return ARRAY_COUNT(kAsteroidCatalog);
+}
+
+unsigned asteroid_count_for_category(AsteroidCategory category)
+{
+    unsigned idx = (unsigned)category;
+
+    if (idx >= ARRAY_COUNT(kAsteroidCatalog))
+        return 0;
+
+    return kAsteroidCatalog[idx].asteroidCount;
+}
+
+unsigned asteroid_number(AsteroidCategory category,
+                         unsigned asteroidIndex)
+{
+    unsigned idx = (unsigned)category;
+
+    if (idx >= ARRAY_COUNT(kAsteroidCatalog))
+        return 0;
+
+    const AsteroidCategoryInfo* cat = &kAsteroidCatalog[idx];
+
+    if (asteroidIndex >= cat->asteroidCount)
+        return 0;
+
+    return cat->asteroids[asteroidIndex].number;
+}
+
+const char* asteroid_name(AsteroidCategory category,
+                          unsigned asteroidIndex)
+{
+    unsigned idx = (unsigned)category;
+
+    if (idx >= ARRAY_COUNT(kAsteroidCatalog))
+        return NULL;
+
+    const AsteroidCategoryInfo* cat = &kAsteroidCatalog[idx];
+
+    if (asteroidIndex >= cat->asteroidCount)
+        return NULL;
+
+    return cat->asteroids[asteroidIndex].name;
+}
+
+unsigned asteroid_naif_id(AsteroidCategory category,
+                          unsigned asteroidIndex)
+{
+    unsigned number =
+        asteroid_number(category, asteroidIndex);
+
+    return number ? (2000000u + number) : 0;
 }
 
 const char* asteroid_category_name(AsteroidCategory category)
@@ -665,94 +742,43 @@ const char* asteroid_category_name(AsteroidCategory category)
     }
 }
 
-unsigned asteroid_count_for_category(AsteroidCategory category)
-{
-    const unsigned idx = static_cast<unsigned>(category);
-
-    if (idx >= kAsteroidCatalog.size())
-    {
-        return 0;
-    }
-
-    return static_cast<unsigned>(kAsteroidCatalog[idx].second.size());
-}
-
-unsigned asteroid_number(AsteroidCategory category, unsigned asteroidIndex)
-{
-    const unsigned categoryIdx = static_cast<unsigned>(category);
-
-    if (categoryIdx >= kAsteroidCatalog.size())
-    {
-        return 0;
-    }
-
-    const auto& asteroids = kAsteroidCatalog[categoryIdx].second;
-
-    if (asteroidIndex >= asteroids.size())
-    {
-        return 0;
-    }
-
-    return asteroids[asteroidIndex].second;
-}
-
-unsigned asteroid_naif_id(AsteroidCategory category, unsigned asteroidIndex)
-{
-    const unsigned asteroidNumber =
-        asteroid_number(category, asteroidIndex);
-
-    if (asteroidNumber == 0)
-    {
-        return 0;
-    }
-
-    return 2000000u + asteroidNumber;
-}
-
 void asteroid_generate_tf_file_for_asteroid_naif_id(unsigned naif_id)
 {
-    string asteroidName;
+    const char* asteroidName = NULL;
 
-    for (const auto& category : kAsteroidCatalog)
+    for (unsigned category = 0;
+         category < asteroid_category_count();
+         ++category)
     {
-        for (const auto& asteroid : category.second)
-        {
-            const unsigned asteroidNumber = asteroid.second;
+        const unsigned count =
+            asteroid_count_for_category((AsteroidCategory)category);
 
-            if (2000000u + asteroidNumber == naif_id)
+        for (unsigned asteroid = 0; asteroid < count; ++asteroid)
+        {
+            if (asteroid_naif_id((AsteroidCategory)category, asteroid) == naif_id)
             {
-                asteroidName = asteroid.first;
+                asteroidName =
+                    asteroid_name((AsteroidCategory)category, asteroid);
                 break;
             }
         }
 
-        if (!asteroidName.empty())
+        if (asteroidName != NULL)
         {
             break;
         }
     }
 
-    if (asteroidName.empty())
+    if (asteroidName == NULL)
     {
         return;
     }
 
-#if 0
-    transform(
-        asteroidName.begin(),
-        asteroidName.end(),
-        asteroidName.begin(),
-        [](unsigned char c)
-        {
-            return static_cast<char>(toupper(c));
-        });
-#endif
+    const std::filesystem::path filePath =
+        std::filesystem::path(Asteroids_docsPath) /
+        (std::to_string(naif_id) + ".tf");
 
-    const filesystem::path filePath =
-        filesystem::path(Asteroids_docsPath) /
-        (to_string(naif_id) + ".tf");
-
-    ofstream out(filePath, ios::binary);
+    std::ofstream out(filePath, std::ios::binary);
 
     if (!out)
     {
@@ -760,12 +786,9 @@ void asteroid_generate_tf_file_for_asteroid_naif_id(unsigned naif_id)
     }
 
     out <<
-        "KPL/FK\n"
-        "\n"
-        "\\begindata\n"
-        "\n"
+        "KPL/FK\n\n"
+        "\\begindata\n\n"
         "   NAIF_BODY_NAME += ( '" << asteroidName << "' )\n"
-        "   NAIF_BODY_CODE += ( " << naif_id << " )\n"
-        "\n"
+        "   NAIF_BODY_CODE += ( " << naif_id << " )\n\n"
         "\\begintext\n";
 }
