@@ -718,6 +718,15 @@ unsigned asteroid_naif_id(AsteroidCategory category,
     return number ? (2000000u + number) : 0;
 }
 
+unsigned asteroid_big_naif_id(AsteroidCategory category,
+                          unsigned asteroidIndex)
+{
+    unsigned number =
+        asteroid_number(category, asteroidIndex);
+
+    return number ? (20000000u + number) : 0;
+}
+
 const char* asteroid_category_name(AsteroidCategory category)
 {
     switch (category)
@@ -755,7 +764,8 @@ void asteroid_generate_tf_file_for_asteroid_naif_id(unsigned naif_id)
 
         for (unsigned asteroid = 0; asteroid < count; ++asteroid)
         {
-            if (asteroid_naif_id((AsteroidCategory)category, asteroid) == naif_id)
+            if (asteroid_naif_id((AsteroidCategory)category, asteroid) == naif_id ||
+                asteroid_big_naif_id((AsteroidCategory)category, asteroid) == naif_id)
             {
                 asteroidName =
                     asteroid_name((AsteroidCategory)category, asteroid);
