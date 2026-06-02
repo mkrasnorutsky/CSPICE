@@ -9003,22 +9003,22 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_PREPROCESSOR_DEFINITIONS = CSPICE_SKIP_PLATFORM_CHECK;
-				INFOPLIST_FILE = CSPICE/Info.plist;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/common/include",
 					"$(SRCROOT)/common/include/CSPICE",
 					"$(SRCROOT)/common/src",
 					"$(SRCROOT)/CSPICE/CSPICE/src/cspice",
 				);
+				INFOPLIST_FILE = CSPICE/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_dylib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				PRODUCT_BUNDLE_IDENTIFIER = co.krasnorutsky.CSPICE;
 				PRODUCT_NAME = CSPICE;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -9162,22 +9162,22 @@
 					"$(inherited)",
 					CSPICE_SKIP_PLATFORM_CHECK,
 				);
-				INFOPLIST_FILE = CSPICE/Info.plist;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/common/include",
 					"$(SRCROOT)/common/include/CSPICE",
 					"$(SRCROOT)/common/src",
 					"$(SRCROOT)/CSPICE/CSPICE/src/cspice",
 				);
+				INFOPLIST_FILE = CSPICE/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_dylib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				PRODUCT_BUNDLE_IDENTIFIER = co.krasnorutsky.CSPICE;
 				PRODUCT_NAME = CSPICE;
 				SDKROOT = auto;
@@ -9201,22 +9201,22 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = c89;
 				GCC_PREPROCESSOR_DEFINITIONS = CSPICE_SKIP_PLATFORM_CHECK;
-				INFOPLIST_FILE = CSPICE/Info.plist;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/common/include",
 					"$(SRCROOT)/common/include/CSPICE",
 					"$(SRCROOT)/common/src",
 					"$(SRCROOT)/CSPICE/CSPICE/src/cspice",
 				);
+				INFOPLIST_FILE = CSPICE/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_dylib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				PRODUCT_BUNDLE_IDENTIFIER = co.krasnorutsky.CSPICE;
 				PRODUCT_NAME = CSPICE;
 				SDKROOT = auto;

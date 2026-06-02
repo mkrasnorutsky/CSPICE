@@ -43,6 +43,22 @@ int asteroids_copy_loaded_spk_ids(int* ids, int max_count);
 int asteroids_recently_added_count(void);
 int asteroids_copy_recently_added_ids(int* ids, int max_count);
 
+enum AsteroidCategory : unsigned
+{
+    AsteroidCategory_DwarfPlanets = 0,
+    AsteroidCategory_KuiperBeltObjects,
+    AsteroidCategory_Centaurs,
+    AsteroidCategory_ClassicalAsteroids,
+    AsteroidCategory_AstrologicalAsteroids
+};
+
+unsigned asteroid_category_count(void);
+const char* asteroid_category_name(AsteroidCategory category);
+unsigned asteroid_count_for_category(AsteroidCategory category);
+unsigned asteroid_number(AsteroidCategory category, unsigned asteroidIndex);
+unsigned asteroid_naif_id(AsteroidCategory category, unsigned asteroidIndex);
+void asteroid_generate_tf_file_for_asteroid_naif_id(unsigned naif_id);
+
 #ifdef __cplusplus
 }
 #endif

@@ -18,8 +18,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "CSPICE",
-            url: "https://github.com/mkrasnorutsky/CSPICE/releases/download/1.0.5/CSPICE.xcframework.zip",
-            checksum: "153a574225b913145b1a880ff555a2275b923297248892a5d143725b59083a26"
+            url: "https://github.com/mkrasnorutsky/CSPICE/releases/download/1.0.6/CSPICE.xcframework.zip",
+            checksum: "125ae59030790b28f3d5d6a524de4b67552147bca0d3b5d2f649e769c7f8f22e"
         )
     ]
 )
