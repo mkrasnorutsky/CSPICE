@@ -52,7 +52,7 @@
 		04DDD88E2375A73E003F01DA /* lx4dec_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD0442375A727003F01DA /* lx4dec_c.c */; };
 		04DDD88F2375A73E003F01DA /* npedln.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD0452375A727003F01DA /* npedln.c */; };
 		04DDD8902375A73E003F01DA /* eul2m.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD0462375A727003F01DA /* eul2m.c */; };
-		04DDD8912375A73E003F01DA /* SpiceZad.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD0472375A727003F01DA /* SpiceZad.h */; };
+		04DDD8912375A73E003F01DA /* SpiceZad.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD0472375A727003F01DA /* SpiceZad.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDD8922375A73E003F01DA /* hx2int.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD0482375A727003F01DA /* hx2int.c */; };
 		04DDD8932375A73E003F01DA /* zzspkgp0.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD0492375A727003F01DA /* zzspkgp0.c */; };
 		04DDD8942375A73E003F01DA /* repmf_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD04A2375A727003F01DA /* repmf_c.c */; };
@@ -77,7 +77,7 @@
 		04DDD8A72375A73E003F01DA /* rotvec.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD05D2375A727003F01DA /* rotvec.c */; };
 		04DDD8A82375A73E003F01DA /* cyadip.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD05E2375A727003F01DA /* cyadip.c */; };
 		04DDD8A92375A73E003F01DA /* wnfetd.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD05F2375A727003F01DA /* wnfetd.c */; };
-		04DDD8AA2375A73E003F01DA /* SpiceGF.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD0602375A727003F01DA /* SpiceGF.h */; };
+		04DDD8AA2375A73E003F01DA /* SpiceGF.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD0602375A727003F01DA /* SpiceGF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDD8AB2375A73E003F01DA /* spke13.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD0612375A727003F01DA /* spke13.c */; };
 		04DDD8AC2375A73E003F01DA /* spkw03.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD0622375A727003F01DA /* spkw03.c */; };
 		04DDD8AD2375A73E003F01DA /* repmot.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD0632375A727003F01DA /* repmot.c */; };
@@ -258,7 +258,7 @@
 		04DDD95C2375A73E003F01DA /* pow_hh.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD1122375A727003F01DA /* pow_hh.c */; };
 		04DDD95D2375A73E003F01DA /* syreni.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD1132375A727003F01DA /* syreni.c */; };
 		04DDD95E2375A73E003F01DA /* spkgeo_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD1142375A727003F01DA /* spkgeo_c.c */; };
-		04DDD95F2375A73E003F01DA /* SpiceZpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD1152375A727003F01DA /* SpiceZpl.h */; };
+		04DDD95F2375A73E003F01DA /* SpiceZpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD1152375A727003F01DA /* SpiceZpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDD9602375A73E003F01DA /* esrchc.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD1162375A727003F01DA /* esrchc.c */; };
 		04DDD9612375A73E003F01DA /* fetchd.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD1172375A727003F01DA /* fetchd.c */; };
 		04DDD9622375A73E003F01DA /* xposeg_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD1182375A727003F01DA /* xposeg_c.c */; };
@@ -549,7 +549,7 @@
 		04DDDA7F2375A73F003F01DA /* ckw04e.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD2352375A729003F01DA /* ckw04e.c */; };
 		04DDDA802375A73F003F01DA /* dcyldr.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD2362375A729003F01DA /* dcyldr.c */; };
 		04DDDA812375A73F003F01DA /* rdnbl.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD2372375A729003F01DA /* rdnbl.c */; };
-		04DDDA822375A73F003F01DA /* SpiceCK.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD2382375A729003F01DA /* SpiceCK.h */; };
+		04DDDA822375A73F003F01DA /* SpiceCK.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD2382375A729003F01DA /* SpiceCK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDA832375A73F003F01DA /* deltet_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD2392375A729003F01DA /* deltet_c.c */; };
 		04DDDA842375A73F003F01DA /* lxname.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD23A2375A729003F01DA /* lxname.c */; };
 		04DDDA852375A73F003F01DA /* recgeo_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD23B2375A729003F01DA /* recgeo_c.c */; };
@@ -731,7 +731,7 @@
 		04DDDB352375A73F003F01DA /* orderd_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD2EB2375A72A003F01DA /* orderd_c.c */; };
 		04DDDB362375A73F003F01DA /* vnorm.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD2EC2375A72A003F01DA /* vnorm.c */; };
 		04DDDB372375A73F003F01DA /* tcheck.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD2ED2375A72A003F01DA /* tcheck.c */; };
-		04DDDB382375A73F003F01DA /* SpicePln.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD2EE2375A72A003F01DA /* SpicePln.h */; };
+		04DDDB382375A73F003F01DA /* SpicePln.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD2EE2375A72A003F01DA /* SpicePln.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDB392375A73F003F01DA /* dasiod.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD2EF2375A72A003F01DA /* dasiod.c */; };
 		04DDDB3A2375A73F003F01DA /* minai.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD2F02375A72A003F01DA /* minai.c */; };
 		04DDDB3B2375A73F003F01DA /* pl2nvc_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD2F12375A72A003F01DA /* pl2nvc_c.c */; };
@@ -824,7 +824,7 @@
 		04DDDB922375A73F003F01DA /* zzekgrs.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD3482375A72B003F01DA /* zzekgrs.c */; };
 		04DDDB932375A73F003F01DA /* sytrnc.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD3492375A72B003F01DA /* sytrnc.c */; };
 		04DDDB942375A73F003F01DA /* getelm_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD34A2375A72B003F01DA /* getelm_c.c */; };
-		04DDDB952375A73F003F01DA /* SpiceCel.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD34B2375A72B003F01DA /* SpiceCel.h */; };
+		04DDDB952375A73F003F01DA /* SpiceCel.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD34B2375A72B003F01DA /* SpiceCel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDB962375A73F003F01DA /* m2q.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD34C2375A72B003F01DA /* m2q.c */; };
 		04DDDB972375A740003F01DA /* fetchc.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD34D2375A72B003F01DA /* fetchc.c */; };
 		04DDDB982375A740003F01DA /* spkcls_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD34E2375A72B003F01DA /* spkcls_c.c */; };
@@ -1003,7 +1003,7 @@
 		04DDDC452375A740003F01DA /* tsetyr_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD3FB2375A72C003F01DA /* tsetyr_c.c */; };
 		04DDDC462375A740003F01DA /* ordc_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD3FC2375A72C003F01DA /* ordc_c.c */; };
 		04DDDC472375A740003F01DA /* ckgr02.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD3FD2375A72C003F01DA /* ckgr02.c */; };
-		04DDDC482375A740003F01DA /* SpiceEK.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD3FE2375A72C003F01DA /* SpiceEK.h */; };
+		04DDDC482375A740003F01DA /* SpiceEK.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD3FE2375A72C003F01DA /* SpiceEK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDC492375A740003F01DA /* quote.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD3FF2375A72C003F01DA /* quote.c */; };
 		04DDDC4A2375A740003F01DA /* matchi.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4002375A72C003F01DA /* matchi.c */; };
 		04DDDC4B2375A740003F01DA /* zzgfssin.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4012375A72D003F01DA /* zzgfssin.c */; };
@@ -1147,7 +1147,7 @@
 		04DDDCD52375A741003F01DA /* cylsph_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD48B2375A72E003F01DA /* cylsph_c.c */; };
 		04DDDCD62375A741003F01DA /* c_cos.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD48C2375A72E003F01DA /* c_cos.c */; };
 		04DDDCD72375A741003F01DA /* zzerror.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD48D2375A72E003F01DA /* zzerror.c */; };
-		04DDDCD82375A741003F01DA /* SpiceUsr.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD48E2375A72E003F01DA /* SpiceUsr.h */; };
+		04DDDCD82375A741003F01DA /* SpiceUsr.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD48E2375A72E003F01DA /* SpiceUsr.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDCD92375A741003F01DA /* zzspkez1.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD48F2375A72E003F01DA /* zzspkez1.c */; };
 		04DDDCDA2375A741003F01DA /* lspcn.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4902375A72E003F01DA /* lspcn.c */; };
 		04DDDCDB2375A741003F01DA /* mtxvg.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4912375A72E003F01DA /* mtxvg.c */; };
@@ -1155,7 +1155,7 @@
 		04DDDCDD2375A741003F01DA /* ckcov.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4932375A72E003F01DA /* ckcov.c */; };
 		04DDDCDE2375A741003F01DA /* vhatg_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4942375A72E003F01DA /* vhatg_c.c */; };
 		04DDDCDF2375A741003F01DA /* spkw13_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4952375A72E003F01DA /* spkw13_c.c */; };
-		04DDDCE02375A741003F01DA /* SpiceZpr.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD4962375A72E003F01DA /* SpiceZpr.h */; };
+		04DDDCE02375A741003F01DA /* SpiceZpr.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD4962375A72E003F01DA /* SpiceZpr.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDCE12375A741003F01DA /* zzgapool.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4972375A72E003F01DA /* zzgapool.c */; };
 		04DDDCE22375A741003F01DA /* syseld.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4982375A72E003F01DA /* syseld.c */; };
 		04DDDCE32375A741003F01DA /* sphrec_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4992375A72E003F01DA /* sphrec_c.c */; };
@@ -1188,7 +1188,7 @@
 		04DDDCFE2375A741003F01DA /* nextwd.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4B42375A72F003F01DA /* nextwd.c */; };
 		04DDDCFF2375A741003F01DA /* zzpini.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4B52375A72F003F01DA /* zzpini.c */; };
 		04DDDD002375A741003F01DA /* ekacec_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4B62375A72F003F01DA /* ekacec_c.c */; };
-		04DDDD012375A741003F01DA /* SpiceZfc.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD4B72375A72F003F01DA /* SpiceZfc.h */; };
+		04DDDD012375A741003F01DA /* SpiceZfc.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD4B72375A72F003F01DA /* SpiceZfc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDD022375A741003F01DA /* sig_die.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4B82375A72F003F01DA /* sig_die.c */; };
 		04DDDD032375A741003F01DA /* vnorm_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4B92375A72F003F01DA /* vnorm_c.c */; };
 		04DDDD042375A741003F01DA /* zzektrls.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD4BA2375A72F003F01DA /* zzektrls.c */; };
@@ -1269,7 +1269,7 @@
 		04DDDD4F2375A741003F01DA /* setc.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD5052375A730003F01DA /* setc.c */; };
 		04DDDD502375A741003F01DA /* cknr04.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD5062375A730003F01DA /* cknr04.c */; };
 		04DDDD512375A741003F01DA /* pckcov_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD5072375A730003F01DA /* pckcov_c.c */; };
-		04DDDD522375A741003F01DA /* SpiceZdf.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD5082375A730003F01DA /* SpiceZdf.h */; };
+		04DDDD522375A741003F01DA /* SpiceZdf.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD5082375A730003F01DA /* SpiceZdf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDD532375A741003F01DA /* zzekac02.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD5092375A730003F01DA /* zzekac02.c */; };
 		04DDDD542375A741003F01DA /* vaddg_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD50A2375A730003F01DA /* vaddg_c.c */; };
 		04DDDD552375A741003F01DA /* scs2e_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD50B2375A730003F01DA /* scs2e_c.c */; };
@@ -1309,7 +1309,7 @@
 		04DDDD772375A741003F01DA /* invstm.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD52D2375A731003F01DA /* invstm.c */; };
 		04DDDD782375A741003F01DA /* dpgrdr_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD52E2375A731003F01DA /* dpgrdr_c.c */; };
 		04DDDD792375A741003F01DA /* smsgni.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD52F2375A731003F01DA /* smsgni.c */; };
-		04DDDD7A2375A741003F01DA /* SpiceSPK.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD5302375A731003F01DA /* SpiceSPK.h */; };
+		04DDDD7A2375A741003F01DA /* SpiceSPK.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD5302375A731003F01DA /* SpiceSPK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDD7B2375A741003F01DA /* qxq_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD5312375A731003F01DA /* qxq_c.c */; };
 		04DDDD7C2375A741003F01DA /* dasrdi.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD5322375A731003F01DA /* dasrdi.c */; };
 		04DDDD7D2375A741003F01DA /* swapad.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD5332375A731003F01DA /* swapad.c */; };
@@ -1602,7 +1602,7 @@
 		04DDDE9C2375A743003F01DA /* surfnm.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6522375A736003F01DA /* surfnm.c */; };
 		04DDDE9D2375A743003F01DA /* mxmt_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6532375A736003F01DA /* mxmt_c.c */; };
 		04DDDE9E2375A743003F01DA /* xwsne.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6542375A736003F01DA /* xwsne.c */; };
-		04DDDE9F2375A743003F01DA /* SpiceZmc.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD6552375A736003F01DA /* SpiceZmc.h */; };
+		04DDDE9F2375A743003F01DA /* SpiceZmc.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD6552375A736003F01DA /* SpiceZmc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDEA02375A743003F01DA /* tparse_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6562375A736003F01DA /* tparse_c.c */; };
 		04DDDEA12375A743003F01DA /* lstlei.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6572375A736003F01DA /* lstlei.c */; };
 		04DDDEA22375A743003F01DA /* kxtrct_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6582375A736003F01DA /* kxtrct_c.c */; };
@@ -1663,7 +1663,7 @@
 		04DDDED92375A743003F01DA /* rquad.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD68F2375A737003F01DA /* rquad.c */; };
 		04DDDEDA2375A743003F01DA /* exit_.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6902375A737003F01DA /* exit_.c */; };
 		04DDDEDB2375A743003F01DA /* packac.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6912375A737003F01DA /* packac.c */; };
-		04DDDEDC2375A743003F01DA /* SpiceZim.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD6922375A737003F01DA /* SpiceZim.h */; };
+		04DDDEDC2375A743003F01DA /* SpiceZim.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD6922375A737003F01DA /* SpiceZim.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDEDD2375A743003F01DA /* zzekixlk.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6932375A737003F01DA /* zzekixlk.c */; };
 		04DDDEDE2375A743003F01DA /* dgeodr.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6942375A737003F01DA /* dgeodr.c */; };
 		04DDDEDF2375A743003F01DA /* zzeksrcp.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6952375A737003F01DA /* zzeksrcp.c */; };
@@ -1741,7 +1741,7 @@
 		04DDDF272375A744003F01DA /* zzeklltc.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6DD2375A738003F01DA /* zzeklltc.c */; };
 		04DDDF282375A744003F01DA /* zzddhf2h.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6DE2375A738003F01DA /* zzddhf2h.c */; };
 		04DDDF292375A744003F01DA /* fmt.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6DF2375A738003F01DA /* fmt.c */; };
-		04DDDF2A2375A744003F01DA /* SpiceZst.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD6E02375A738003F01DA /* SpiceZst.h */; };
+		04DDDF2A2375A744003F01DA /* SpiceZst.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD6E02375A738003F01DA /* SpiceZst.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDF2B2375A744003F01DA /* i_abs.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6E12375A738003F01DA /* i_abs.c */; };
 		04DDDF2C2375A744003F01DA /* inter_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6E22375A738003F01DA /* inter_c.c */; };
 		04DDDF2D2375A744003F01DA /* frmget.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD6E32375A738003F01DA /* frmget.c */; };
@@ -1832,7 +1832,7 @@
 		04DDDF822375A744003F01DA /* getmsg.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD7382375A73A003F01DA /* getmsg.c */; };
 		04DDDF832375A744003F01DA /* lbuild.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD7392375A73A003F01DA /* lbuild.c */; };
 		04DDDF842375A744003F01DA /* close.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD73A2375A73A003F01DA /* close.c */; };
-		04DDDF852375A744003F01DA /* SpiceEll.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD73B2375A73A003F01DA /* SpiceEll.h */; };
+		04DDDF852375A744003F01DA /* SpiceEll.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD73B2375A73A003F01DA /* SpiceEll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04DDDF862375A744003F01DA /* hl_le.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD73C2375A73A003F01DA /* hl_le.c */; };
 		04DDDF872375A744003F01DA /* d_mod.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD73D2375A73A003F01DA /* d_mod.c */; };
 		04DDDF882375A744003F01DA /* inelpl.c in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD73E2375A73A003F01DA /* inelpl.c */; };
@@ -1920,7 +1920,7 @@
 		04DDE19E2375EBFD003F01DA /* Directory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DDE19C2375EBFD003F01DA /* Directory.cpp */; };
 		04EC00002378411A001181E7 /* eqncpv_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFEE4237840CC001181E7 /* eqncpv_c.c */; };
 		04EC00012378411A001181E7 /* dskb02_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFEE5237840CD001181E7 /* dskb02_c.c */; };
-		04EC00022378411A001181E7 /* SpiceFrm.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFEE6237840CD001181E7 /* SpiceFrm.h */; };
+		04EC00022378411A001181E7 /* SpiceFrm.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFEE6237840CD001181E7 /* SpiceFrm.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04EC00032378411A001181E7 /* zzdasrfr.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFEE7237840CD001181E7 /* zzdasrfr.c */; };
 		04EC00042378411A001181E7 /* illum_plid_pl02.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFEE8237840CD001181E7 /* illum_plid_pl02.c */; };
 		04EC00052378411A001181E7 /* spkcpo.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFEE9237840CE001181E7 /* spkcpo.c */; };
@@ -1963,7 +1963,7 @@
 		04EC002A2378411A001181E7 /* dskmi2_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF0E237840E1001181E7 /* dskmi2_c.c */; };
 		04EC002B2378411A001181E7 /* spkcpo_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF0F237840E3001181E7 /* spkcpo_c.c */; };
 		04EC002C2378411A001181E7 /* zzdsksel.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF10237840E4001181E7 /* zzdsksel.c */; };
-		04EC002D2378411A001181E7 /* SpiceErr.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF11237840E5001181E7 /* SpiceErr.h */; };
+		04EC002D2378411A001181E7 /* SpiceErr.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF11237840E5001181E7 /* SpiceErr.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04EC002E2378411A001181E7 /* pltvol.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF12237840E6001181E7 /* pltvol.c */; };
 		04EC002F2378411A001181E7 /* dsksrf.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF13237840E7001181E7 /* dsksrf.c */; };
 		04EC00302378411A001181E7 /* phaseq.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF14237840E8001181E7 /* phaseq.c */; };
@@ -1989,7 +1989,7 @@
 		04EC00442378411A001181E7 /* zzctr.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF28237840F0001181E7 /* zzctr.c */; };
 		04EC00452378411A001181E7 /* zzraybox.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF29237840F0001181E7 /* zzraybox.c */; };
 		04EC00462378411B001181E7 /* zzrecbox.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF2A237840F0001181E7 /* zzrecbox.c */; };
-		04EC00472378411B001181E7 /* SpiceOsc.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF2B237840F1001181E7 /* SpiceOsc.h */; };
+		04EC00472378411B001181E7 /* SpiceOsc.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF2B237840F1001181E7 /* SpiceOsc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04EC00482378411B001181E7 /* dskmi2.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF2C237840F1001181E7 /* dskmi2.c */; };
 		04EC00492378411B001181E7 /* trcdep_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF2D237840F2001181E7 /* trcdep_c.c */; };
 		04EC004A2378411B001181E7 /* dasopw_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF2E237840F2001181E7 /* dasopw_c.c */; };
@@ -1997,7 +1997,7 @@
 		04EC004C2378411B001181E7 /* srfnrm.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF30237840F3001181E7 /* srfnrm.c */; };
 		04EC004D2378411B001181E7 /* dashfn_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF31237840F3001181E7 /* dashfn_c.c */; };
 		04EC004E2378411B001181E7 /* dskb02.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF32237840F4001181E7 /* dskb02.c */; };
-		04EC004F2378411B001181E7 /* SpiceDSK.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF33237840F5001181E7 /* SpiceDSK.h */; };
+		04EC004F2378411B001181E7 /* SpiceDSK.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF33237840F5001181E7 /* SpiceDSK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04EC00502378411B001181E7 /* zznrmlon.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF34237840F6001181E7 /* zznrmlon.c */; };
 		04EC00512378411B001181E7 /* zzsrftrn.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF35237840F7001181E7 /* zzsrftrn.c */; };
 		04EC00522378411B001181E7 /* termpt_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF36237840F7001181E7 /* termpt_c.c */; };
@@ -2020,9 +2020,9 @@
 		04EC00632378411B001181E7 /* srfc2s.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF47237840FE001181E7 /* srfc2s.c */; };
 		04EC00642378411B001181E7 /* chbigr.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF48237840FE001181E7 /* chbigr.c */; };
 		04EC00652378411B001181E7 /* dasrfr_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF49237840FF001181E7 /* dasrfr_c.c */; };
-		04EC00662378411B001181E7 /* SpiceDtl.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF4A237840FF001181E7 /* SpiceDtl.h */; };
+		04EC00662378411B001181E7 /* SpiceDtl.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF4A237840FF001181E7 /* SpiceDtl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04EC00672378411B001181E7 /* zzhsc.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF4B23784100001181E7 /* zzhsc.c */; };
-		04EC00682378411B001181E7 /* SpiceOccult.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF4C23784100001181E7 /* SpiceOccult.h */; };
+		04EC00682378411B001181E7 /* SpiceOccult.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF4C23784100001181E7 /* SpiceOccult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04EC00692378411B001181E7 /* srfc2s_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF4D23784100001181E7 /* srfc2s_c.c */; };
 		04EC006A2378411B001181E7 /* dlabfs.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF4E23784101001181E7 /* dlabfs.c */; };
 		04EC006B2378411B001181E7 /* zzsrfker.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF4F23784101001181E7 /* zzsrfker.c */; };
@@ -2039,7 +2039,7 @@
 		04EC00762378411B001181E7 /* zzvox2id.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF5A23784105001181E7 /* zzvox2id.c */; };
 		04EC00772378411B001181E7 /* dlafps.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF5B23784105001181E7 /* dlafps.c */; };
 		04EC00782378411B001181E7 /* pckw02_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF5C23784106001181E7 /* pckw02_c.c */; };
-		04EC00792378411B001181E7 /* SpiceSrf.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF5D23784106001181E7 /* SpiceSrf.h */; };
+		04EC00792378411B001181E7 /* SpiceSrf.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF5D23784106001181E7 /* SpiceSrf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04EC007B2378411B001181E7 /* zzdsksph.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF5F23784107001181E7 /* zzdsksph.c */; };
 		04EC007C2378411B001181E7 /* srfcss_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF6023784107001181E7 /* srfcss_c.c */; };
 		04EC007D2378411B001181E7 /* ckgr06.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF6123784107001181E7 /* ckgr06.c */; };
@@ -2083,7 +2083,7 @@
 		04EC00A32378411B001181E7 /* kplfrm_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF8723784113001181E7 /* kplfrm_c.c */; };
 		04EC00A42378411B001181E7 /* zzbods2c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF8823784113001181E7 /* zzbods2c.c */; };
 		04EC00A52378411B001181E7 /* lgrind_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF8923784113001181E7 /* lgrind_c.c */; };
-		04EC00A62378411B001181E7 /* SpiceZrnm.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF8A23784114001181E7 /* SpiceZrnm.h */; };
+		04EC00A62378411B001181E7 /* SpiceZrnm.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFF8A23784114001181E7 /* SpiceZrnm.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04EC00A72378411B001181E7 /* incnsg.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF8B23784114001181E7 /* incnsg.c */; };
 		04EC00A82378411B001181E7 /* pltar_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF8C23784114001181E7 /* pltar_c.c */; };
 		04EC00A92378411B001181E7 /* dskcls_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFF8D23784114001181E7 /* dskcls_c.c */; };
@@ -2180,7 +2180,7 @@
 		04ECFFE82378411A001181E7 /* zzrytpdt.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFECC237840C5001181E7 /* zzrytpdt.c */; };
 		04ECFFE92378411A001181E7 /* zztanutl.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFECD237840C6001181E7 /* zztanutl.c */; };
 		04ECFFEA2378411A001181E7 /* zzinlat.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFECE237840C6001181E7 /* zzinlat.c */; };
-		04ECFFEB2378411A001181E7 /* SpiceDLA.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFECF237840C6001181E7 /* SpiceDLA.h */; };
+		04ECFFEB2378411A001181E7 /* SpiceDLA.h in Headers */ = {isa = PBXBuildFile; fileRef = 04ECFECF237840C6001181E7 /* SpiceDLA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04ECFFEC2378411A001181E7 /* ckmp06.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFED0237840C6001181E7 /* ckmp06.c */; };
 		04ECFFED2378411A001181E7 /* ednmpt.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFED1237840C7001181E7 /* ednmpt.c */; };
 		04ECFFEE2378411A001181E7 /* dskw02_c.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ECFED2237840C7001181E7 /* dskw02_c.c */; };
